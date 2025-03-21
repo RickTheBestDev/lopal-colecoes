@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type = "button" onclick = " adicionarAlunos()"> Adicionar Alunos</button>
+    <button type=" button" onclick ="remover()"> Remover aluno</button>
+    <br>
+    <output></output>
+
+
+    <script>
+  
+
+
+    
+
+   let alunos =  ["aline", "arthur", "barbára", "bruna luise", "bruna torres", "bruna veloso", 
+   "cauã", "daniel", "davi", ];
+
+   function imprimirAlunos(){
+
+    document.querySelector("output").innerHTML = "<h1>lista de alunos</h1>"
+   
+   for (let indice =0; indice < alunos.length; indice++){ 
+       document.querySelector("output").innerHTML+= alunos[indice]+
+       "<br>"
+
+   }
+   
+
+}
+
+    function adicionarAlunos(){
+   
+    let novoAluno = prompt("digite o nome do(a) aluno(a):")
+    alunos.push(novoAluno)
+    
+    opcaoUsuario = confirm("deseja adicionar mais um aluno?")
+    
+    while(opcaoUsuario){
+        adicionarAlunos()
+    }
+
+   
+    imprimirAlunos()
+
+    }
+    imprimirAlunos()
+
+
+    function remover(){
+   if  (alunos.length > 0){ 
+        alunos.pop()
+        console.log()
+        imprimirAlunos()
+    }else{alert("não há mias nada para tirar!")}
+
+    }
+
+
+    let frutas = ["maça,banana"];
+    console.log(frutas)
+
+    frutas.push("mamão")
+    console.log(frutas)
+
+    frutas.pop()
+    console.log(frutas)
+
+
+
+
+    </script>
+</body>
+</html>
